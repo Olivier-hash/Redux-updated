@@ -3,7 +3,7 @@
 // useDispatch: A React-Redux hook used to send actions to the Redux store (to update state).
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from './redux/counter';
+import { decrement, increment, incrementByAmount } from './redux/counter';
 
 function App() {
   const { count } =useSelector((state) => state.counter);
@@ -14,6 +14,7 @@ function App() {
         <h1>Counter: {count}</h1>
         <button onClick={() => dispatch(increment() )}>Increment+</button>
         <button onClick={() => dispatch(decrement() )}>Decrement-</button>
+        <button onClick={() => dispatch(incrementByAmount(33) )}>Increment by 33</button>
     </>
   );
 }
